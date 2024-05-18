@@ -17,16 +17,16 @@ return(
       <li className='p__opensans'><a href="#home">Home</a> </li>
       <li className='p__opensans'><a href="#about">About</a> </li>
       <li className='p__opensans'><a href="#menu">Menu</a> </li>
-      <li className='p__opensans'><a href="#Awards">Awards</a> </li>
+      {/* <li className='p__opensans'><a href="#Awards">Awards</a> </li> */}
       <li className='p__opensans'><a href="#contact">Find Us</a> </li>
       
     </ul>
     <div className='app__navbar-login'>
       <a href="#login" className='p__opensans'>Contact Us ‎ </a>
    
-      <div />
+      {/* <div /> */}
       
-      <a href="/"className='p__opensans'>‎Login In / Registration   ‎‎</a>
+      {/* <a href="/"className='p__opensans'>‎Login In / Registration   ‎‎</a> */}
 
 
       </div>
@@ -43,8 +43,9 @@ return(
               <li><a href="#home" onClick={() => setToggleMenu(false)}>Home</a></li>
               <li><a href="#about" onClick={() => setToggleMenu(false)}>About</a></li>
               <li><a href="#menu" onClick={() => setToggleMenu(false)}>Menu</a></li>
-              <li><a href="#awards" onClick={() => setToggleMenu(false)}>Awards</a></li>
-              <li><a href="#contact" onClick={() => setToggleMenu(false)}>Contact</a></li>
+              {/* <li><a href="#awards" onClick={() => setToggleMenu(false)}>Awards</a></li> */}
+              <li><a href="#contact" onClick={() => setToggleMenu(false)}>Find Us</a></li>
+              <li><a href="#login" onClick={() => setToggleMenu(false)}>Reservation</a></li>
             </ul>
 
           </div>
