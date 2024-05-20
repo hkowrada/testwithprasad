@@ -8,14 +8,6 @@
   align-items: center;
 }
 
-.app__bg {
-  background: url('./assets/bg.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: fixed;
-}
-
 .app__wrapper {
   display: flex;
   justify-content: space-between;
@@ -54,17 +46,17 @@
 
 .custom__button {
   background-color: var(--color-crimson);
-    color: var(--color-black);
-    font-family: var(--font-base);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    line-height: 28px;
-    font-size: 16px;
-    padding: 0.5rem 1.5rem;
-    border-radius: 1px;
-    border: none;
-    outline: none;
-    cursor: pointer;
+  color: var(--color-black);
+  font-family: var(--font-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 28px;
+  font-size: 16px;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .p__cormorant {
@@ -73,7 +65,7 @@
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: capitalize;
-  font-feature-settings: 'tnum' on, 'lnum' on;
+  font-feature-settings: "tnum" on, "lnum" on;
   line-height: 29.9px;
   font-size: 23px;
 }
@@ -101,6 +93,71 @@
   width: 45px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* background-color: var(--color-black); */
+  background: url("./assets/bg.png");
+}
+
+.active {
+  border: 2px solid #1db9b9;
+  transform: scale(1.3);
+  transition: all 300ms;
+}
+
+.App,
+.slideshow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.slideshow {
+  position: relative;
+}
+
+.mainImg {
+  transition: all 500ms;
+  width: 40vw;
+  /* height: 80vh; */
+}
+
+.actions {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.actions button {
+  background: #0000003d;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  padding-top: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  padding-top: 5px;
+}
+
+.actions button:active {
+  background: #000000a2;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  padding-top: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  padding-top: 5px;
+}
+
 @media screen and (min-width: 2000px) {
   .custom__button,
   .p__cormorant {
@@ -121,6 +178,14 @@
   .spoon__img {
     width: 80px;
   }
+}
+
+.app__bg {
+  background: url("./assets/bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 @media screen and (max-width: 1150px) {
@@ -151,7 +216,7 @@
   .section__padding {
     padding: 4rem 2rem;
   }
-  
+
   .p__cormorant {
     font-size: 21px;
   }
