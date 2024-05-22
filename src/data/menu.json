@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Item Name",
+    "description": "description of the cuisine",
+    "imgUrl": "url",
+    "price": "5$"
+  },
+  {
+    "name": "Item Name 2",
+    "description": "description of the cuisine",
+    "imgUrl": "url",
+
+    "price": "5$"
+  },
+  {
+    "name": "Item Name 3",
+    "description": "description of the cuisine",
+    "imgUrl": "url",
+
+    "price": "5$"
+  },
+  {
+    "name": "Item Name 4",
+    "description": "description of the cuisine",
+    "imgUrl": "url",
+
+    "price": "5$"
+  }
+]
