@@ -1,3 +1,37 @@
+/* src/App.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: 16px;
+  padding: 8px;
+}
+
+.react-calendar__tile--active {
+  background: #1976d2;
+  color: white;
+}
+
+.container {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.calendar-heading {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Additional styles from your existing CSS */
 .section__padding {
   padding: 4rem 6rem;
 }
@@ -12,7 +46,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   min-height: 100vh;
 }
 
@@ -31,7 +64,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-left: 2rem;
 }
 
@@ -99,7 +131,6 @@
 
 body {
   margin: 0;
-  /* background-color: var(--color-black); */
   background: url("./assets/bg.png");
 }
 
@@ -125,7 +156,6 @@ body {
 .mainImg {
   transition: all 500ms;
   width: 40vw;
-  /* height: 80vh; */
 }
 
 .actions {
