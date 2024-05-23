@@ -3,6 +3,7 @@ Contact me form
 */
 
 .section-contact-me {
+  color: white;
   display: flex;
   gap: 2rem;
   align-items: center;
@@ -11,7 +12,7 @@ Contact me form
   /* background-color: #014aaa4b; */
   padding: 3rem;
   border-radius: 2rem;
-  border: 0.4rem solid #00224d;
+  border: 0.4rem solid rgb(199, 169, 1);
 }
 
 .contact-box {
