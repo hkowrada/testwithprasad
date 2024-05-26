@@ -1,7 +1,8 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import FooterOverlay from './components/Footer/Footer';
+import AdminDashboard from './pages/AdminDashboard';
 import './App.css';
 
 const Home = lazy(() => import('./pages/Home'));
@@ -14,14 +15,15 @@ function App() {
     <Router>
       <Navbar />
       <Suspense fallback={<div>Loading...</div>}>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/menu" component={Menu} />
-          <Route path="/reservation" component={Reservation} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/reservation" element={<Reservation />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+        </Routes>
       </Suspense>
-      <Footer />
+      <FooterOverlay />
     </Router>
   );
 }

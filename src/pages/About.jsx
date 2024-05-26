@@ -11,12 +11,11 @@ import {
   Laurels,
   SpecialMenu,
 } from "../container";
-import { Navbar } from "../components";
+//import { Navbar } from "../components";
 import "../App.css";
 
 const About = () => (
   <div>
-    <Navbar />
     {/* <Header /> */}
     <AboutUs />
 

@@ -1,13 +1,12 @@
 import React from 'react';
-import { Navbar, Footer } from '../components';
+import FooterOverlay from '../components/Footer/Footer';
 import ReservationForm from '../components/Form/ReservationForm';
-import '../App.css';  // Ensure that styles are applied
+import '../App.css';
 
 const Reservation = () => (
   <div>
-    <Navbar />
     <ReservationForm />
-    <Footer />
+    <FooterOverlay />
   </div>
 );
 

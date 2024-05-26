@@ -11,13 +11,12 @@ import {
   Laurels,
   SpecialMenu,
 } from "../container";
-import { Navbar } from "../components";
+//import { Navbar } from "../components";
 import "../App.css";
 import DummyMenu from "../container/Menu/DummyMenu";
 
 const Menu = () => (
   <div>
-    <Navbar />
 
     {/* <SpecialMenu /> */}
     <DummyMenu />
