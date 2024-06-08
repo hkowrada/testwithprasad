@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import fireImg from "../assets/img/shape/fire.png";
 
 const Features = () => (
   <div className="feature-style-three-area">
@@ -8,18 +9,36 @@ const Features = () => (
           <div className="reservation-form light">
             <i className="fas fa-utensils"></i>
             <h3>Book a table</h3>
-            <form id="bookingForm" action="assets/mail/contact.php" method="POST">
+            <form
+              id="bookingForm"
+              action="assets/mail/contact.php"
+              method="POST"
+            >
               <div className="row">
                 <div className="col-lg-12">
                   <div className="form-group">
-                    <input className="form-control" id="phone" name="phone" placeholder="Phone" type="text" required />
+                    <input
+                      className="form-control"
+                      id="phone"
+                      name="phone"
+                      placeholder="Phone"
+                      type="text"
+                      required
+                    />
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className="col-lg-12">
                   <div className="form-group">
-                    <input className="form-control" id="email" name="email" placeholder="Email" type="email" required />
+                    <input
+                      className="form-control"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      type="email"
+                      required
+                    />
                   </div>
                 </div>
               </div>
@@ -40,18 +59,38 @@ const Features = () => (
                   </div>
                 </div>
               </div>
-              <div className="row" id="extra-persons-row" style={{ display: 'none' }}>
+              <div
+                className="row"
+                id="extra-persons-row"
+                style={{ display: "none" }}
+              >
                 <div className="col-lg-12">
                   <div className="form-group">
-                    <input className="form-control" id="extra-persons" name="extra_persons" placeholder="Enter number of persons" type="number" min="9" />
+                    <input
+                      className="form-control"
+                      id="extra-persons"
+                      name="extra_persons"
+                      placeholder="Enter number of persons"
+                      type="number"
+                      min="9"
+                    />
                   </div>
                 </div>
               </div>
               <div className="row">
                 <div className="col-lg-12">
                   <div className="input-group date date-picker-one">
-                    <input type="text" className="form-control" id="date" name="date" placeholder="Date" required />
-                    <span className="input-group-addon"><i className="fas fa-calendar-alt"></i></span>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="date"
+                      name="date"
+                      placeholder="Date"
+                      required
+                    />
+                    <span className="input-group-addon">
+                      <i className="fas fa-calendar-alt"></i>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -77,7 +116,9 @@ const Features = () => (
               </div>
               <div className="row">
                 <div className="col-lg-12">
-                  <button type="submit" name="submit" id="submit">Book A Table</button>
+                  <button type="submit" name="submit" id="submit">
+                    Book A Table
+                  </button>
                 </div>
               </div>
             </form>
@@ -90,12 +131,17 @@ const Features = () => (
               <div className="food-cat-next"></div>
             </div>
             <div className="food-cat-items">
-              <h2 className="flex-title mb-35"><img src="assets/img/shape/fire.png" alt="Image Not Found" /> Our Popular category</h2>
+              <h2 className="flex-title mb-35">
+                <img src={fireImg} alt="Image Not Found" /> Our Popular category
+              </h2>
               <div className="food-cat-carousel swiper">
                 <div className="swiper-wrapper">
                   <div className="swiper-slide">
                     <a href="#">
-                      <img src="assets/img/Butter-Chicken.jpg" alt="Image Not Found" />
+                      <img
+                        src="assets/img/Butter-Chicken.jpg"
+                        alt="Image Not Found"
+                      />
                       <div className="overlay">
                         <span>Main Dishes</span>
                         <h5>Butter Chicken</h5>
@@ -113,14 +159,17 @@ const Features = () => (
                   </div>
                   <div className="swiper-slide">
                     <a href="#">
-                      <img src="assets/img/poisson.avif" alt="Image Not Found" />
+                      <img
+                        src="assets/img/poisson.avif"
+                        alt="Image Not Found"
+                      />
                       <div className="overlay">
                         <span>Sea Food</span>
                         <h5>Poisson Goan Curry</h5>
                       </div>
                     </a>
                   </div>
-                  <div className="swiper-slide">
+                  {/* <div className="swiper-slide">
                     <a href="javascript:void(0);" onClick={() => openModal('assets/img/newcopy_page-0007.jpg')}>
                       <img src="assets/img/malai.jpg" alt="Image Not Found" />
                       <div className="overlay">
@@ -128,7 +177,7 @@ const Features = () => (
                         <h5>Malai Tikka</h5>
                       </div>
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
