@@ -1,5 +1,6 @@
-import React from 'react';
-import logo from '../assets/img/logo.png';
+import React from "react";
+import logo from "../assets/img/logo.png";
+import footerImg from "../assets/img/shape/9.png";
 
 const Footer = () => (
   <footer>
@@ -52,10 +53,18 @@ const Footer = () => (
           </div>
           <div className="col-lg-3 col-md-6 footer-item mt-50">
             <h4 className="widget-title">Newsletter</h4>
-            <p>Join our subscribers list to get the latest news and special offers.</p>
+            <p>
+              Join our subscribers list to get the latest news and special
+              offers.
+            </p>
             <div className="f-item newsletter">
               <form action="#">
-                <input type="email" placeholder="Your Email" className="form-control" name="email" />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  className="form-control"
+                  name="email"
+                />
                 <button type="submit">
                   <i className="fas fa-arrow-right"></i>
                 </button>
@@ -71,7 +80,7 @@ const Footer = () => (
     </div>
     <div className="footer-bottom text-light">
       <div className="footer-bottom-shape">
-        <img src="assets/img/shape/9.png" alt="Image Not Found" />
+        <img src={footerImg} alt="Image Not Found" />
       </div>
       <div className="container">
         <div className="row">
