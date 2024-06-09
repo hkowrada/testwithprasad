@@ -26,9 +26,10 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "DATABASE_URL": "@database_url",
-    "EMAIL": "@email",
-    "EMAIL_PASSWORD": "@email_password"
+    "DATABASE_URL": "mongodb+srv://harishkowrada:huV9TtiYpHewHAxZ@ddlinde.km6xotn.mongodb.net/?retryWrites=true&w=majority&appName=ddlinde",
+    "EMAIL": "lvcksaezxgwxxxdy",
+    "EMAIL_PASSWORD": "foodnlifeindien@gmail.com",
+    "JWT_SECRET": "admin"
   }
 }
 
