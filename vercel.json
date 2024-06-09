@@ -2,14 +2,33 @@
   "version": 2,
   "builds": [
     {
-      "src": "*.js",
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "routes/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "models/**/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "middleware/**/*.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "server.js"
     }
-  ]
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "DATABASE_URL": "@database_url",
+    "EMAIL": "@email",
+    "EMAIL_PASSWORD": "@email_password"
+  }
 }
+
