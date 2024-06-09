@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import fireImg from "../assets/img/shape/fire.png";
 import butterChickenImg from "../assets/img/Butter-Chicken.jpg";
 import pistaImg from "../assets/img/pista.jpg";
@@ -9,46 +9,97 @@ import "react-toastify/dist/ReactToastify.min.css";
 import { createPortal } from "react-dom";
 
 const Features = () => {
+  const [formValues, setFormValues] = useState({
+    phone: "",
+    email: "",
+    persons: "1",
+    date: "",
+    time: "12:00",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const errors = {};
+
+    // Phone number validation
+    if (!formValues.phone) {
+      errors.phone = "Phone number is required";
+    } else if (!/^\d{10}$/.test(formValues.phone)) {
+      errors.phone = "Phone number must be 10 digits";
+    }
+
+    // Email validation
+    if (!formValues.email) {
+      errors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formValues.email)) {
+      errors.email = "Email is invalid";
+    }
+
+    // Date validation
+    if (!formValues.date) {
+      errors.date = "Date is required";
+    } else {
+      const selectedDate = new Date(formValues.date);
+      const currentDate = new Date();
+      currentDate.setHours(0, 0, 0, 0); // Set time to 00:00:00 for comparison
+      if (selectedDate < currentDate) {
+        errors.date = "Date must be today or in the future";
+      }
+    }
+
+    return errors;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    let obj = {};
-    obj.phone = e.target[0].value;
-    obj.email = e.target[1].value;
-    obj.persons = e.target[2].value;
-    obj.date = e.target[3].value;
-    obj.time = e.target[4].value;
+    const validationErrors = validate();
+    setErrors(validationErrors);
 
-    console.log(obj);
-
-    axios
-      .post("http://localhost:5000/reserve", obj)
-      .then((response) => {
-        console.log(response);
-        if (response.status == 200)
-          toast.success(response.data, {
+    if (Object.keys(validationErrors).length === 0) {
+      axios
+        .post("http://localhost:5000/reserve", formValues)
+        .then((response) => {
+          if (response.status === 200) {
+            toast.success(response.data, {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "light",
+            });
+            setFormValues({
+              phone: "",
+              email: "",
+              persons: "1",
+              date: "",
+              time: "12:00",
+            });
+          }
+        })
+        .catch((err) =>
+          toast.error("Unable to reserve the table. Try after sometime", {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
             theme: "light",
-          });
-      })
-      .catch((err) =>
-        toast.error("Unable to reserve the table. Try after sometime", {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        })
-      );
+          })
+        );
+    }
   };
+
   return (
     <div className="feature-style-three-area">
       <div className="container">
@@ -57,12 +108,7 @@ const Features = () => {
             <div className="reservation-form light">
               <i className="fas fa-utensils"></i>
               <h3>Book a table</h3>
-              <form
-                id="bookingForm"
-                // action="assets/mail/contact.php"
-                onSubmit={handleSubmit}
-                method="POST"
-              >
+              <form id="bookingForm" onSubmit={handleSubmit} method="POST">
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="form-group">
@@ -72,9 +118,11 @@ const Features = () => {
                         name="phone"
                         placeholder="Phone"
                         type="number"
+                        value={formValues.phone}
+                        onChange={handleChange}
                         required
-                        maxLength={10}
                       />
+                      {errors.phone && <p className="error">{errors.phone}</p>}
                     </div>
                   </div>
                 </div>
@@ -87,15 +135,24 @@ const Features = () => {
                         name="email"
                         placeholder="Email"
                         type="email"
+                        value={formValues.email}
+                        onChange={handleChange}
                         required
                       />
+                      {errors.email && <p className="error">{errors.email}</p>}
                     </div>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="form-group">
-                      <select id="persons" name="persons" required>
+                      <select
+                        id="persons"
+                        name="persons"
+                        value={formValues.persons}
+                        onChange={handleChange}
+                        required
+                      >
                         <option value="1">1 Person</option>
                         <option value="2">2 Persons</option>
                         <option value="3">3 Persons</option>
@@ -117,19 +174,24 @@ const Features = () => {
                         className="form-control"
                         id="date"
                         name="date"
-                        placeholder="Date"
+                        value={formValues.date}
+                        onChange={handleChange}
                         required
                       />
-                      {/* <span className="input-group-addon">
-                      <i className="fas fa-calendar-alt"></i>
-                    </span> */}
+                      {errors.date && <p className="error">{errors.date}</p>}
                     </div>
                   </div>
                 </div>
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="form-group">
-                      <select id="time" name="time" required>
+                      <select
+                        id="time"
+                        name="time"
+                        value={formValues.time}
+                        onChange={handleChange}
+                        required
+                      >
                         <option value="12:00">12:00</option>
                         <option value="12:30">12:30</option>
                         <option value="13:00">13:00</option>

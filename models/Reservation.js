@@ -8,7 +8,6 @@ const ReservationSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true,
   },
   persons: {
     type: Number,
